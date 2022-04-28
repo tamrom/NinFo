@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour, IHasarAlabilir,ICaniniYenileyebil
             _karakterCani = value;
         }
     }
-    public void HasarAl(int hasar) //enemy collisionuna 
+    public void HasarAl(int hasar) //enemy collisionuna carptiginda
     {
         KarakterCan -= hasar;
     }
@@ -42,7 +42,7 @@ public class PlayerController : MonoBehaviour, IHasarAlabilir,ICaniniYenileyebil
         if (Input.GetButton("Jump")&& _isground.Onground)
         {
             Ziplama();
-            _anim.SetBool("__jump", false);
+            _anim.SetBool("__jump", false);  // anim.play _ 
 
         }
     }
@@ -50,7 +50,7 @@ public class PlayerController : MonoBehaviour, IHasarAlabilir,ICaniniYenileyebil
     {
         float horizontal = Input.GetAxis("Horizontal");
         transform.position += new Vector3(horizontal, 0, 0) * karakterHizi * Time.deltaTime;
-        _anim.SetFloat("__speed", Mathf.Abs(horizontal));
+        _anim.SetFloat("__speed", Mathf.Abs(horizontal)); // sadece bu satýrý kapsýyor Mathf.abs  |mutlak deger|
         if (horizontal<0)
         {
             

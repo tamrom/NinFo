@@ -9,16 +9,16 @@ public class toplanabilirObjeler : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
       
-        GameObject obj = collision.gameObject;
-        if (obj.GetComponent<PlayerController>()!=null)
+        GameObject obje = collision.gameObject;
+        if (obje.GetComponent<PlayerController>()!=null)
         {
             switch (_objeOzelligi)
             {
                 case ObjeOzelligi.Canverir:
-                    obj.GetComponent<PlayerController>().CaniniYenile(5);
+                    obje.GetComponent<PlayerController>().CaniniYenile(5);
                     break;
                 case ObjeOzelligi.HasarVerir:
-                    obj.GetComponent<PlayerController>().HasarAl(10);
+                    obje.GetComponent<PlayerController>().HasarAl(10);
                     break;
                 case ObjeOzelligi.Yavaslatir:
                     break;
